@@ -5,17 +5,34 @@
     <title>HTML og JS demo</title>
 </head>
 <body>
-    <h1 id="header1">Javascript Demo</h1>
-    <input id="input" type=text">
-    <p id="paragraf">Noget tekst!</p>
-    <div id="div">Noget mere tekst!</div>
-    <img id="billede" src="https://imgs.xkcd.com/comics/exploits_of_a_mom.png" alt="exploits - sql injection">
-    <button id="minKnap" onclick="btnClick()">Don't Press This Button!</button>
-    <script>
-        function btnClick(){
-            document.getElementById("billede").hidden = true;
-            document.getElementById("paragraf").innerHTML = "<b>tid for øvelse</b>";
-        }
-    </script>
+<h1 id="header1">This is your first JS exercise</h1>
+<input id="input" type=text">
+<br>
+<p id="change text"></p>
+
+<button id="minKnap" onclick="btnClick()">Click me</button>
+
+<p id="paragraf">when clicking the "Click me" button you should see this:</p>
+
+
+<script>
+    function btnClick() {
+        document.getElementById("change text").innerHTML = "";
+        const x = "Change me";
+        document.getElementById("input").value = x;
+        document.getElementById("minKnap").innerText = "Chance text above and click me again!";
+
+        document.getElementById("minKnap").setAttribute("onClick", "btnClickAgain()");
+
+    }
+
+    function btnClickAgain() {
+        var y = document.getElementById("input").value;
+        document.getElementById("change text").innerHTML = "Thank you for changing the input to: " + "<strong>" + y + "</strong>";
+        document.getElementById("minKnap").setAttribute("onClick", "btnClick()");
+
+    }
+
+</script>
 </body>
 </html>
