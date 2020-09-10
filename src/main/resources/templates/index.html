@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML og JS demo</title>
+</head>
+<body>
+    <h1 id="header1">Javascript Demo</h1>
+    <input id="input" type=text">
+    <p id="paragraf">Noget tekst!</p>
+    <div id="div">Noget mere tekst!</div>
+    <img id="billede" src="https://imgs.xkcd.com/comics/exploits_of_a_mom.png" alt="exploits - sql injection">
+    <button id="minKnap" onclick="btnClick()">Don't Press This Button!</button>
+    <script>
+        function btnClick(){
+            document.getElementById("billede").hidden = true;
+            document.getElementById("paragraf").innerHTML = "<b>tid for øvelse</b>";
+        }
+    </script>
+</body>
+</html>
